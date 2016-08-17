@@ -1,0 +1,1304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UdeBaseService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IUdeBaseService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:NtlmAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" />
+      <xsd:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects.FICP.Diagnosis.DataService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUdeBaseService_LookupCaseFactStoreInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupCaseFactStoreInfo" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupCaseFactStoreInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupCaseFactStoreInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetSupportTopicChildren_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupportTopicChildren" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetSupportTopicChildren_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupportTopicChildrenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupProductGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupProductGroup" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupProductGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupProductGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupGenericMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupGenericMessages" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupGenericMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupGenericMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupGenericMessagesByCaseNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupGenericMessagesByCaseNumber" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupGenericMessagesByCaseNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupGenericMessagesByCaseNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupGenericMessagesEx_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupGenericMessagesEx" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupGenericMessagesEx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupGenericMessagesExResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupPlugin_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupPlugin" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupPlugin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupPluginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupPluginEx_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupPluginEx" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupPluginEx_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupPluginExResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupPluginRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupPluginRule" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupPluginRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupPluginRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_SearchPluginRules_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPluginRules" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_SearchPluginRules_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPluginRulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_InsertGenericMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertGenericMessage" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_InsertGenericMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertGenericMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_InsertPluginRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPluginRule" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_InsertPluginRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPluginRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_UpdatePluginRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePluginRule" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_UpdatePluginRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePluginRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_UpdateOrInsertPluginRuleRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrInsertPluginRuleRange" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_UpdateOrInsertPluginRuleRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrInsertPluginRuleRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetMonitoredUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonitoredUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetMonitoredUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonitoredUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetUserAndDirects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAndDirects" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetUserAndDirects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAndDirectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_MonitorUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_MonitorUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MonitorUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_UnMonitorUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnMonitorUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_UnMonitorUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnMonitorUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_EnlistUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnlistUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_EnlistUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnlistUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupCasesByOwner_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupCasesByOwner" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LookupCasesByOwner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupCasesByOwnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetRelatedCasesBySolutionSourceID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelatedCasesBySolutionSourceID" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetRelatedCasesBySolutionSourceID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelatedCasesBySolutionSourceIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCaseDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCaseDetails" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCaseDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCaseDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_HasLocalCachePermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:HasLocalCachePermission" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_HasLocalCachePermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HasLocalCachePermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetPermissionsOfLocalCache_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissionsOfLocalCache" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetPermissionsOfLocalCache_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissionsOfLocalCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetInputSourcesForCase_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInputSourcesForCase" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetInputSourcesForCase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInputSourcesForCaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetInputSourcesForCaseWithReplicas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInputSourcesForCaseWithReplicas" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetInputSourcesForCaseWithReplicas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInputSourcesForCaseWithReplicasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetFilesForInputSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilesForInputSource" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetFilesForInputSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilesForInputSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetInputSourceReplicas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInputSourceReplicas" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetInputSourceReplicas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInputSourceReplicasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CreateInputSourceReplica_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInputSourceReplica" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CreateInputSourceReplica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateInputSourceReplicaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetFeedbackTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeedbackTypes" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetFeedbackTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeedbackTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetVoteForSolutionSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVoteForSolutionSource" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetVoteForSolutionSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVoteForSolutionSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_SubmitVote_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitVote" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_SubmitVote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitVoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_InsertViewStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertViewStatistics" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_InsertViewStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertViewStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_RequestLocalCacheAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestLocalCacheAccess" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_RequestLocalCacheAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestLocalCacheAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LogUserFeedback_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogUserFeedback" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_LogUserFeedback_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogUserFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCurrentDatabase_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentDatabase" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCurrentDatabase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_SendEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_SendEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_SuggestMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SuggestMessage" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_SuggestMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SuggestMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetSDPReports_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSDPReports" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetSDPReports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSDPReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetSDPManifests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSDPManifests" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetSDPManifests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSDPManifestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CreateSDPSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSDPSession" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CreateSDPSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSDPSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CreateRawSDPSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRawSDPSession" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CreateRawSDPSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRawSDPSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_SubscribeRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeRule" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_SubscribeRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_UnsubscribeRule_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeRule" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_UnsubscribeRule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeRuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetRuleSubscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleSubscription" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetRuleSubscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleSubscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetFICPWorkItemsBySupportRequestNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFICPWorkItemsBySupportRequestNumbers" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetFICPWorkItemsBySupportRequestNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFICPWorkItemsBySupportRequestNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_AreSupportRequestFromSelfHelp_InputMessage">
+    <wsdl:part name="parameters" element="tns:AreSupportRequestFromSelfHelp" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_AreSupportRequestFromSelfHelp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AreSupportRequestFromSelfHelpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_WorkflowRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowRecord" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_WorkflowRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WorkflowRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetTestLink_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestLink" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetTestLink_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTestLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCriticalNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCriticalNotification" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCriticalNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCriticalNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCurrentUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentUser" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCurrentUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_ValidateUserList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserList" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_ValidateUserList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_AddUsersToWorkspace_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUsersToWorkspace" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_AddUsersToWorkspace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUsersToWorkspaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CloseWorkspaceWithId_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseWorkspaceWithId" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CloseWorkspaceWithId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseWorkspaceWithIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CloseWorkspacesForCaseNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseWorkspacesForCaseNumber" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CloseWorkspacesForCaseNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseWorkspacesForCaseNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_ReOpenWorkspacesForCaseNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReOpenWorkspacesForCaseNumber" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_ReOpenWorkspacesForCaseNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReOpenWorkspacesForCaseNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_ReOpenWorkspaceWithId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReOpenWorkspaceWithId" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_ReOpenWorkspaceWithId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReOpenWorkspaceWithIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CreateWorkspace_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWorkspace" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CreateWorkspace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateWorkspaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetAvailableWorkspaceLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableWorkspaceLocations" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetAvailableWorkspaceLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailableWorkspaceLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetWorkspaceWithId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkspaceWithId" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetWorkspaceWithId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkspaceWithIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetWorkspaces_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkspaces" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetWorkspaces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkspacesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_ModifyWorkspace_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyWorkspace" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_ModifyWorkspace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyWorkspaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_RemoveUsersFromWorkspace_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUsersFromWorkspace" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_RemoveUsersFromWorkspace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveUsersFromWorkspaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CacheFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CacheFile" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_CacheFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CacheFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_DeleteFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFile" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_DeleteFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCountryCodeFromSrData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryCodeFromSrData" />
+  </wsdl:message>
+  <wsdl:message name="IUdeBaseService_GetCountryCodeFromSrData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryCodeFromSrDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUdeBaseService">
+    <wsdl:operation name="LookupCaseFactStoreInfo">
+      <wsdl:input wsaw:Action="LookupCaseFactStoreInfo" message="tns:IUdeBaseService_LookupCaseFactStoreInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/LookupCaseFactStoreInfoResponse" message="tns:IUdeBaseService_LookupCaseFactStoreInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportTopicChildren">
+      <wsdl:input wsaw:Action="GetSupportTopicChildren" message="tns:IUdeBaseService_GetSupportTopicChildren_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetSupportTopicChildrenResponse" message="tns:IUdeBaseService_GetSupportTopicChildren_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupProductGroup">
+      <wsdl:input wsaw:Action="LookupProductGroup" message="tns:IUdeBaseService_LookupProductGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/LookupProductGroupResponse" message="tns:IUdeBaseService_LookupProductGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupGenericMessages">
+      <wsdl:input wsaw:Action="LookupGenericMessages" message="tns:IUdeBaseService_LookupGenericMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/LookupGenericMessagesResponse" message="tns:IUdeBaseService_LookupGenericMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupGenericMessagesByCaseNumber">
+      <wsdl:input wsaw:Action="LookupGenericMessagesByCaseNumber" message="tns:IUdeBaseService_LookupGenericMessagesByCaseNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/LookupGenericMessagesByCaseNumberResponse" message="tns:IUdeBaseService_LookupGenericMessagesByCaseNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupGenericMessagesEx">
+      <wsdl:input wsaw:Action="LookupGenericMessagesEx" message="tns:IUdeBaseService_LookupGenericMessagesEx_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/LookupGenericMessagesExResponse" message="tns:IUdeBaseService_LookupGenericMessagesEx_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupPlugin">
+      <wsdl:input wsaw:Action="LookupPlugin" message="tns:IUdeBaseService_LookupPlugin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/LookupPluginResponse" message="tns:IUdeBaseService_LookupPlugin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupPluginEx">
+      <wsdl:input wsaw:Action="LookupPluginEx" message="tns:IUdeBaseService_LookupPluginEx_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/LookupPluginExResponse" message="tns:IUdeBaseService_LookupPluginEx_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupPluginRule">
+      <wsdl:input wsaw:Action="LookupPluginRule" message="tns:IUdeBaseService_LookupPluginRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/LookupPluginRuleResponse" message="tns:IUdeBaseService_LookupPluginRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPluginRules">
+      <wsdl:input wsaw:Action="SearchPluginRules" message="tns:IUdeBaseService_SearchPluginRules_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/SearchPluginRulesResponse" message="tns:IUdeBaseService_SearchPluginRules_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertGenericMessage">
+      <wsdl:input wsaw:Action="InsertGenericMessage" message="tns:IUdeBaseService_InsertGenericMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/InsertGenericMessageResponse" message="tns:IUdeBaseService_InsertGenericMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPluginRule">
+      <wsdl:input wsaw:Action="InsertPluginRule" message="tns:IUdeBaseService_InsertPluginRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/InsertPluginRuleResponse" message="tns:IUdeBaseService_InsertPluginRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePluginRule">
+      <wsdl:input wsaw:Action="UpdatePluginRule" message="tns:IUdeBaseService_UpdatePluginRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/UpdatePluginRuleResponse" message="tns:IUdeBaseService_UpdatePluginRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrInsertPluginRuleRange">
+      <wsdl:input wsaw:Action="UpdateOrInsertPluginRuleRange" message="tns:IUdeBaseService_UpdateOrInsertPluginRuleRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/UpdateOrInsertPluginRuleRangeResponse" message="tns:IUdeBaseService_UpdateOrInsertPluginRuleRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitoredUsers">
+      <wsdl:input wsaw:Action="GetMonitoredUsers" message="tns:IUdeBaseService_GetMonitoredUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetMonitoredUsersResponse" message="tns:IUdeBaseService_GetMonitoredUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAndDirects">
+      <wsdl:input wsaw:Action="GetUserAndDirects" message="tns:IUdeBaseService_GetUserAndDirects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetUserAndDirectsResponse" message="tns:IUdeBaseService_GetUserAndDirects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitorUsers">
+      <wsdl:input wsaw:Action="MonitorUsers" message="tns:IUdeBaseService_MonitorUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/MonitorUsersResponse" message="tns:IUdeBaseService_MonitorUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnMonitorUsers">
+      <wsdl:input wsaw:Action="UnMonitorUsers" message="tns:IUdeBaseService_UnMonitorUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/UnMonitorUsersResponse" message="tns:IUdeBaseService_UnMonitorUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnlistUsers">
+      <wsdl:input wsaw:Action="EnlistUsers" message="tns:IUdeBaseService_EnlistUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/EnlistUsersResponse" message="tns:IUdeBaseService_EnlistUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupCasesByOwner">
+      <wsdl:input wsaw:Action="LookupCasesByOwner" message="tns:IUdeBaseService_LookupCasesByOwner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/LookupCasesByOwnerResponse" message="tns:IUdeBaseService_LookupCasesByOwner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatedCasesBySolutionSourceID">
+      <wsdl:input wsaw:Action="GetRelatedCasesBySolutionSourceID" message="tns:IUdeBaseService_GetRelatedCasesBySolutionSourceID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetRelatedCasesBySolutionSourceIDResponse" message="tns:IUdeBaseService_GetRelatedCasesBySolutionSourceID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCaseDetails">
+      <wsdl:input wsaw:Action="GetCaseDetails" message="tns:IUdeBaseService_GetCaseDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetCaseDetailsResponse" message="tns:IUdeBaseService_GetCaseDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HasLocalCachePermission">
+      <wsdl:input wsaw:Action="HasLocalCachePermission" message="tns:IUdeBaseService_HasLocalCachePermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/HasLocalCachePermissionResponse" message="tns:IUdeBaseService_HasLocalCachePermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionsOfLocalCache">
+      <wsdl:input wsaw:Action="GetPermissionsOfLocalCache" message="tns:IUdeBaseService_GetPermissionsOfLocalCache_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetPermissionsOfLocalCacheResponse" message="tns:IUdeBaseService_GetPermissionsOfLocalCache_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInputSourcesForCase">
+      <wsdl:input wsaw:Action="GetInputSourcesForCase" message="tns:IUdeBaseService_GetInputSourcesForCase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetInputSourcesForCaseResponse" message="tns:IUdeBaseService_GetInputSourcesForCase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInputSourcesForCaseWithReplicas">
+      <wsdl:input wsaw:Action="GetInputSourcesForCaseWithReplicas" message="tns:IUdeBaseService_GetInputSourcesForCaseWithReplicas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetInputSourcesForCaseWithReplicasResponse" message="tns:IUdeBaseService_GetInputSourcesForCaseWithReplicas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesForInputSource">
+      <wsdl:input wsaw:Action="GetFilesForInputSource" message="tns:IUdeBaseService_GetFilesForInputSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetFilesForInputSourceResponse" message="tns:IUdeBaseService_GetFilesForInputSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInputSourceReplicas">
+      <wsdl:input wsaw:Action="GetInputSourceReplicas" message="tns:IUdeBaseService_GetInputSourceReplicas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetInputSourceReplicasResponse" message="tns:IUdeBaseService_GetInputSourceReplicas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateInputSourceReplica">
+      <wsdl:input wsaw:Action="CreateInputSourceReplica" message="tns:IUdeBaseService_CreateInputSourceReplica_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/CreateInputSourceReplicaResponse" message="tns:IUdeBaseService_CreateInputSourceReplica_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeedbackTypes">
+      <wsdl:input wsaw:Action="GetFeedbackTypes" message="tns:IUdeBaseService_GetFeedbackTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetFeedbackTypesResponse" message="tns:IUdeBaseService_GetFeedbackTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVoteForSolutionSource">
+      <wsdl:input wsaw:Action="GetVoteForSolutionSource" message="tns:IUdeBaseService_GetVoteForSolutionSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetVoteForSolutionSourceResponse" message="tns:IUdeBaseService_GetVoteForSolutionSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitVote">
+      <wsdl:input wsaw:Action="SubmitVote" message="tns:IUdeBaseService_SubmitVote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/SubmitVoteResponse" message="tns:IUdeBaseService_SubmitVote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertViewStatistics">
+      <wsdl:input wsaw:Action="InsertViewStatistics" message="tns:IUdeBaseService_InsertViewStatistics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/InsertViewStatisticsResponse" message="tns:IUdeBaseService_InsertViewStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestLocalCacheAccess">
+      <wsdl:input wsaw:Action="RequestLocalCacheAccess" message="tns:IUdeBaseService_RequestLocalCacheAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/RequestLocalCacheAccessResponse" message="tns:IUdeBaseService_RequestLocalCacheAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogUserFeedback">
+      <wsdl:input wsaw:Action="LogUserFeedback" message="tns:IUdeBaseService_LogUserFeedback_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/LogUserFeedbackResponse" message="tns:IUdeBaseService_LogUserFeedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentDatabase">
+      <wsdl:input wsaw:Action="GetCurrentDatabase" message="tns:IUdeBaseService_GetCurrentDatabase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetCurrentDatabaseResponse" message="tns:IUdeBaseService_GetCurrentDatabase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:input wsaw:Action="SendEmail" message="tns:IUdeBaseService_SendEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/SendEmailResponse" message="tns:IUdeBaseService_SendEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SuggestMessage">
+      <wsdl:input wsaw:Action="SuggestMessage" message="tns:IUdeBaseService_SuggestMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/SuggestMessageResponse" message="tns:IUdeBaseService_SuggestMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSDPReports">
+      <wsdl:input wsaw:Action="GetSDPReports" message="tns:IUdeBaseService_GetSDPReports_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetSDPReportsResponse" message="tns:IUdeBaseService_GetSDPReports_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSDPManifests">
+      <wsdl:input wsaw:Action="GetSDPManifests" message="tns:IUdeBaseService_GetSDPManifests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetSDPManifestsResponse" message="tns:IUdeBaseService_GetSDPManifests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSDPSession">
+      <wsdl:input wsaw:Action="CreateSDPSession" message="tns:IUdeBaseService_CreateSDPSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/CreateSDPSessionResponse" message="tns:IUdeBaseService_CreateSDPSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRawSDPSession">
+      <wsdl:input wsaw:Action="CreateRawSDPSession" message="tns:IUdeBaseService_CreateRawSDPSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/CreateRawSDPSessionResponse" message="tns:IUdeBaseService_CreateRawSDPSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeRule">
+      <wsdl:input wsaw:Action="SubscribeRule" message="tns:IUdeBaseService_SubscribeRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/SubscribeRuleResponse" message="tns:IUdeBaseService_SubscribeRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnsubscribeRule">
+      <wsdl:input wsaw:Action="UnsubscribeRule" message="tns:IUdeBaseService_UnsubscribeRule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/UnsubscribeRuleResponse" message="tns:IUdeBaseService_UnsubscribeRule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleSubscription">
+      <wsdl:input wsaw:Action="GetRuleSubscription" message="tns:IUdeBaseService_GetRuleSubscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetRuleSubscriptionResponse" message="tns:IUdeBaseService_GetRuleSubscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFICPWorkItemsBySupportRequestNumbers">
+      <wsdl:input wsaw:Action="GetFICPWorkItemsBySupportRequestNumbers" message="tns:IUdeBaseService_GetFICPWorkItemsBySupportRequestNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetFICPWorkItemsBySupportRequestNumbersResponse" message="tns:IUdeBaseService_GetFICPWorkItemsBySupportRequestNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AreSupportRequestFromSelfHelp">
+      <wsdl:input wsaw:Action="AreSupportRequestFromSelfHelp" message="tns:IUdeBaseService_AreSupportRequestFromSelfHelp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/AreSupportRequestFromSelfHelpResponse" message="tns:IUdeBaseService_AreSupportRequestFromSelfHelp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowRecord">
+      <wsdl:input wsaw:Action="WorkflowRecord" message="tns:IUdeBaseService_WorkflowRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/WorkflowRecordResponse" message="tns:IUdeBaseService_WorkflowRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:input wsaw:Action="GetCountries" message="tns:IUdeBaseService_GetCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetCountriesResponse" message="tns:IUdeBaseService_GetCountries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTestLink">
+      <wsdl:input wsaw:Action="GetTestLink" message="tns:IUdeBaseService_GetTestLink_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetTestLinkResponse" message="tns:IUdeBaseService_GetTestLink_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCriticalNotification">
+      <wsdl:input wsaw:Action="GetCriticalNotification" message="tns:IUdeBaseService_GetCriticalNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetCriticalNotificationResponse" message="tns:IUdeBaseService_GetCriticalNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUser">
+      <wsdl:input wsaw:Action="GetCurrentUser" message="tns:IUdeBaseService_GetCurrentUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetCurrentUserResponse" message="tns:IUdeBaseService_GetCurrentUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUserList">
+      <wsdl:input wsaw:Action="ValidateUserList" message="tns:IUdeBaseService_ValidateUserList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/ValidateUserListResponse" message="tns:IUdeBaseService_ValidateUserList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersToWorkspace">
+      <wsdl:input wsaw:Action="AddUsersToWorkspace" message="tns:IUdeBaseService_AddUsersToWorkspace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/AddUsersToWorkspaceResponse" message="tns:IUdeBaseService_AddUsersToWorkspace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseWorkspaceWithId">
+      <wsdl:input wsaw:Action="CloseWorkspaceWithId" message="tns:IUdeBaseService_CloseWorkspaceWithId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/CloseWorkspaceWithIdResponse" message="tns:IUdeBaseService_CloseWorkspaceWithId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseWorkspacesForCaseNumber">
+      <wsdl:input wsaw:Action="CloseWorkspacesForCaseNumber" message="tns:IUdeBaseService_CloseWorkspacesForCaseNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/CloseWorkspacesForCaseNumberResponse" message="tns:IUdeBaseService_CloseWorkspacesForCaseNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReOpenWorkspacesForCaseNumber">
+      <wsdl:input wsaw:Action="ReOpenWorkspacesForCaseNumber" message="tns:IUdeBaseService_ReOpenWorkspacesForCaseNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/ReOpenWorkspacesForCaseNumberResponse" message="tns:IUdeBaseService_ReOpenWorkspacesForCaseNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReOpenWorkspaceWithId">
+      <wsdl:input wsaw:Action="ReOpenWorkspaceWithId" message="tns:IUdeBaseService_ReOpenWorkspaceWithId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/ReOpenWorkspaceWithIdResponse" message="tns:IUdeBaseService_ReOpenWorkspaceWithId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateWorkspace">
+      <wsdl:input wsaw:Action="CreateWorkspace" message="tns:IUdeBaseService_CreateWorkspace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/CreateWorkspaceResponse" message="tns:IUdeBaseService_CreateWorkspace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableWorkspaceLocations">
+      <wsdl:input wsaw:Action="GetAvailableWorkspaceLocations" message="tns:IUdeBaseService_GetAvailableWorkspaceLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetAvailableWorkspaceLocationsResponse" message="tns:IUdeBaseService_GetAvailableWorkspaceLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkspaceWithId">
+      <wsdl:input wsaw:Action="GetWorkspaceWithId" message="tns:IUdeBaseService_GetWorkspaceWithId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetWorkspaceWithIdResponse" message="tns:IUdeBaseService_GetWorkspaceWithId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkspaces">
+      <wsdl:input wsaw:Action="GetWorkspaces" message="tns:IUdeBaseService_GetWorkspaces_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetWorkspacesResponse" message="tns:IUdeBaseService_GetWorkspaces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyWorkspace">
+      <wsdl:input wsaw:Action="ModifyWorkspace" message="tns:IUdeBaseService_ModifyWorkspace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/ModifyWorkspaceResponse" message="tns:IUdeBaseService_ModifyWorkspace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromWorkspace">
+      <wsdl:input wsaw:Action="RemoveUsersFromWorkspace" message="tns:IUdeBaseService_RemoveUsersFromWorkspace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/RemoveUsersFromWorkspaceResponse" message="tns:IUdeBaseService_RemoveUsersFromWorkspace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CacheFile">
+      <wsdl:input wsaw:Action="CacheFile" message="tns:IUdeBaseService_CacheFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/CacheFileResponse" message="tns:IUdeBaseService_CacheFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <wsdl:input wsaw:Action="DeleteFile" message="tns:IUdeBaseService_DeleteFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/DeleteFileResponse" message="tns:IUdeBaseService_DeleteFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCodeFromSrData">
+      <wsdl:input wsaw:Action="GetCountryCodeFromSrData" message="tns:IUdeBaseService_GetCountryCodeFromSrData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUdeBaseService/GetCountryCodeFromSrDataResponse" message="tns:IUdeBaseService_GetCountryCodeFromSrData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUdeBaseService" type="tns:IUdeBaseService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IUdeBaseService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LookupCaseFactStoreInfo">
+      <soap:operation soapAction="LookupCaseFactStoreInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportTopicChildren">
+      <soap:operation soapAction="GetSupportTopicChildren" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupProductGroup">
+      <soap:operation soapAction="LookupProductGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupGenericMessages">
+      <soap:operation soapAction="LookupGenericMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupGenericMessagesByCaseNumber">
+      <soap:operation soapAction="LookupGenericMessagesByCaseNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupGenericMessagesEx">
+      <soap:operation soapAction="LookupGenericMessagesEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupPlugin">
+      <soap:operation soapAction="LookupPlugin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupPluginEx">
+      <soap:operation soapAction="LookupPluginEx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupPluginRule">
+      <soap:operation soapAction="LookupPluginRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPluginRules">
+      <soap:operation soapAction="SearchPluginRules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertGenericMessage">
+      <soap:operation soapAction="InsertGenericMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPluginRule">
+      <soap:operation soapAction="InsertPluginRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePluginRule">
+      <soap:operation soapAction="UpdatePluginRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrInsertPluginRuleRange">
+      <soap:operation soapAction="UpdateOrInsertPluginRuleRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonitoredUsers">
+      <soap:operation soapAction="GetMonitoredUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAndDirects">
+      <soap:operation soapAction="GetUserAndDirects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MonitorUsers">
+      <soap:operation soapAction="MonitorUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnMonitorUsers">
+      <soap:operation soapAction="UnMonitorUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnlistUsers">
+      <soap:operation soapAction="EnlistUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupCasesByOwner">
+      <soap:operation soapAction="LookupCasesByOwner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatedCasesBySolutionSourceID">
+      <soap:operation soapAction="GetRelatedCasesBySolutionSourceID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCaseDetails">
+      <soap:operation soapAction="GetCaseDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HasLocalCachePermission">
+      <soap:operation soapAction="HasLocalCachePermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionsOfLocalCache">
+      <soap:operation soapAction="GetPermissionsOfLocalCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInputSourcesForCase">
+      <soap:operation soapAction="GetInputSourcesForCase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInputSourcesForCaseWithReplicas">
+      <soap:operation soapAction="GetInputSourcesForCaseWithReplicas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilesForInputSource">
+      <soap:operation soapAction="GetFilesForInputSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInputSourceReplicas">
+      <soap:operation soapAction="GetInputSourceReplicas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateInputSourceReplica">
+      <soap:operation soapAction="CreateInputSourceReplica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeedbackTypes">
+      <soap:operation soapAction="GetFeedbackTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVoteForSolutionSource">
+      <soap:operation soapAction="GetVoteForSolutionSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitVote">
+      <soap:operation soapAction="SubmitVote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertViewStatistics">
+      <soap:operation soapAction="InsertViewStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestLocalCacheAccess">
+      <soap:operation soapAction="RequestLocalCacheAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogUserFeedback">
+      <soap:operation soapAction="LogUserFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentDatabase">
+      <soap:operation soapAction="GetCurrentDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <soap:operation soapAction="SendEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SuggestMessage">
+      <soap:operation soapAction="SuggestMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSDPReports">
+      <soap:operation soapAction="GetSDPReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSDPManifests">
+      <soap:operation soapAction="GetSDPManifests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSDPSession">
+      <soap:operation soapAction="CreateSDPSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRawSDPSession">
+      <soap:operation soapAction="CreateRawSDPSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeRule">
+      <soap:operation soapAction="SubscribeRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnsubscribeRule">
+      <soap:operation soapAction="UnsubscribeRule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleSubscription">
+      <soap:operation soapAction="GetRuleSubscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFICPWorkItemsBySupportRequestNumbers">
+      <soap:operation soapAction="GetFICPWorkItemsBySupportRequestNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AreSupportRequestFromSelfHelp">
+      <soap:operation soapAction="AreSupportRequestFromSelfHelp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WorkflowRecord">
+      <soap:operation soapAction="WorkflowRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap:operation soapAction="GetCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTestLink">
+      <soap:operation soapAction="GetTestLink" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCriticalNotification">
+      <soap:operation soapAction="GetCriticalNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUser">
+      <soap:operation soapAction="GetCurrentUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUserList">
+      <soap:operation soapAction="ValidateUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUsersToWorkspace">
+      <soap:operation soapAction="AddUsersToWorkspace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseWorkspaceWithId">
+      <soap:operation soapAction="CloseWorkspaceWithId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseWorkspacesForCaseNumber">
+      <soap:operation soapAction="CloseWorkspacesForCaseNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReOpenWorkspacesForCaseNumber">
+      <soap:operation soapAction="ReOpenWorkspacesForCaseNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReOpenWorkspaceWithId">
+      <soap:operation soapAction="ReOpenWorkspaceWithId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateWorkspace">
+      <soap:operation soapAction="CreateWorkspace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableWorkspaceLocations">
+      <soap:operation soapAction="GetAvailableWorkspaceLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkspaceWithId">
+      <soap:operation soapAction="GetWorkspaceWithId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkspaces">
+      <soap:operation soapAction="GetWorkspaces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyWorkspace">
+      <soap:operation soapAction="ModifyWorkspace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUsersFromWorkspace">
+      <soap:operation soapAction="RemoveUsersFromWorkspace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CacheFile">
+      <soap:operation soapAction="CacheFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap:operation soapAction="DeleteFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCodeFromSrData">
+      <soap:operation soapAction="GetCountryCodeFromSrData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UdeBaseService">
+    <wsdl:port name="BasicHttpBinding_IUdeBaseService" binding="tns:BasicHttpBinding_IUdeBaseService">
+      <soap:address location="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

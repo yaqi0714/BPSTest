@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5fd3a6ea-3c58-4954-85ee-1965c48f4619" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://hw-yaqli-vm03/UDeBaseService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UdeBaseService11.wsdl" MetadataType="Wsdl" ID="4bc76218-69ee-4ce7-bde8-bb0acb49b948" SourceId="1" SourceUrl="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?wsdl" />
+    <MetadataFile FileName="UdeBaseService66.xsd" MetadataType="Schema" ID="1c9dd017-dc29-4e7e-b9a1-d0840c92fa29" SourceId="1" SourceUrl="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?xsd=xsd5" />
+    <MetadataFile FileName="UdeBaseService67.xsd" MetadataType="Schema" ID="14cfaa40-32c3-428c-a49c-39cff481c75c" SourceId="1" SourceUrl="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?xsd=xsd3" />
+    <MetadataFile FileName="UdeBaseService68.xsd" MetadataType="Schema" ID="978a6d35-f901-4a6f-ae53-4bede2eecc88" SourceId="1" SourceUrl="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UdeBaseService69.xsd" MetadataType="Schema" ID="351a1dcf-dfea-4820-bb63-9ebc421fb586" SourceId="1" SourceUrl="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?xsd=xsd4" />
+    <MetadataFile FileName="UdeBaseService610.xsd" MetadataType="Schema" ID="deb93602-800d-4444-bdce-0d67cfd962a9" SourceId="1" SourceUrl="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UdeBaseService11.disco" MetadataType="Disco" ID="e0e697b2-1269-482a-aed3-b7eda5fda689" SourceId="1" SourceUrl="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?disco" />
+    <MetadataFile FileName="UdeBaseService611.xsd" MetadataType="Schema" ID="84d58c50-3dd2-4347-81c9-23cd637c86ed" SourceId="1" SourceUrl="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects.FICP.Diagnosis.DataService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects.FICP.Diagnosis.DataService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfWorkItemDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkItemDetail" nillable="true" type="tns:WorkItemDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkItemDetail" nillable="true" type="tns:ArrayOfWorkItemDetail" />
+  <xs:complexType name="WorkItemDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Links" nillable="true" type="tns:ArrayOfLink" />
+      <xs:element minOccurs="0" name="WorkItem" nillable="true" type="tns:WorkItem" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="WorkItemDetail" nillable="true" type="tns:WorkItemDetail" />
+  <xs:complexType name="ArrayOfLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Link" nillable="true" type="tns:Link" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLink" nillable="true" type="tns:ArrayOfLink" />
+  <xs:complexType name="Link">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Progress" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceItemID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="TargetItemCreatedTime" type="q1:DateTimeOffset" />
+      <xs:element minOccurs="0" name="TargetItemData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetItemEditableData" nillable="true" type="tns:ItemEditableData" />
+      <xs:element minOccurs="0" name="TargetItemID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="TargetItemLastModifiedTime" type="q2:DateTimeOffset" />
+      <xs:element minOccurs="0" name="TargetItemType" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Link" nillable="true" type="tns:Link" />
+  <xs:complexType name="ItemEditableData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsRead" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemStatus" nillable="true" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Metadata" nillable="true" type="q3:ArrayOfKeyValueOfstringstring" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ItemEditableData" nillable="true" type="tns:ItemEditableData" />
+  <xs:complexType name="WorkItem">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreatedTime" type="q4:DateTimeOffset" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="tns:WorkItemEditableData" />
+      <xs:element minOccurs="0" name="ItemID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemVersion" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="LastModifiedTime" type="q5:DateTimeOffset" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="WorkItem" nillable="true" type="tns:WorkItem" />
+  <xs:complexType name="WorkItemEditableData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Flag" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemEditableData" nillable="true" type="tns:ItemEditableData" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="WorkItemEditableData" nillable="true" type="tns:WorkItemEditableData" />
+</xs:schema>

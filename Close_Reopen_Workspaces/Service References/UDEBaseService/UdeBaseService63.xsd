@@ -1,0 +1,2384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CaseFactStoreInfoCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CaseFactStoreInfo" nillable="true" type="tns:CaseFactStoreInfo" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="CaseFactStoreInfoCollection" nillable="true" type="tns:CaseFactStoreInfoCollection" />
+  <xs:complexType name="CaseFactStoreInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CaseNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreatedDate" type="q1:DateTimeOffset" />
+      <xs:element minOccurs="0" name="Database" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FactStoreId" type="ser:guid" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ModifiedDate" type="q2:DateTimeOffset" />
+      <xs:element minOccurs="0" name="Server" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="CaseFactStoreInfo" nillable="true" type="tns:CaseFactStoreInfo" />
+  <xs:simpleType name="SupportTopicSearchDepth">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ProductGroup" />
+      <xs:enumeration value="Taxonomy" />
+      <xs:enumeration value="SupportTopicLevel1" />
+      <xs:enumeration value="SupportTopicLevel2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SupportTopicSearchDepth" nillable="true" type="tns:SupportTopicSearchDepth" />
+  <xs:complexType name="SupportTopicCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupportTopic" nillable="true" type="tns:SupportTopic" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SupportTopicCollection" nillable="true" type="tns:SupportTopicCollection" />
+  <xs:complexType name="SupportTopic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Children" nillable="true" type="tns:SupportTopicCollection" />
+      <xs:element minOccurs="0" name="FriendlyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasChildren" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parent" nillable="true" type="tns:SupportTopic" />
+      <xs:element minOccurs="0" name="PluginRules" nillable="true" type="tns:PluginRuleCollection" />
+      <xs:element minOccurs="0" name="ProductGroup" nillable="true" type="tns:ProductGroup" />
+      <xs:element minOccurs="0" name="SupportTopicId" type="xs:long" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SupportTopic" nillable="true" type="tns:SupportTopic" />
+  <xs:complexType name="PluginRuleCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PluginRule" nillable="true" type="tns:PluginRule" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="PluginRuleCollection" nillable="true" type="tns:PluginRuleCollection" />
+  <xs:complexType name="PluginRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContentType" type="tns:ContentType" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreatedDate" type="q3:DateTimeOffset" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ExpiredDate" type="q4:DateTimeOffset" />
+      <xs:element minOccurs="0" name="GreenTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HighLevelLogicDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InternalContentUrl" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="LastOccurrence" nillable="true" type="q5:DateTimeOffset" />
+      <xs:element minOccurs="0" name="LocaleId" type="xs:int" />
+      <xs:element minOccurs="0" name="MessageType" type="tns:MessageType" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ModifiedDate" type="q6:DateTimeOffset" />
+      <xs:element minOccurs="0" name="OccurrenceCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Plugin" nillable="true" type="tns:Plugin" />
+      <xs:element minOccurs="0" name="PluginRuleNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="PublicContentUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportedUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RootCause" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RuleId" type="xs:long" />
+      <xs:element minOccurs="0" name="SolutionDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SolutionSourceId" type="ser:guid" />
+      <xs:element minOccurs="0" name="SolutionTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupportTopic" nillable="true" type="tns:SupportTopic" />
+      <xs:element minOccurs="0" name="Symptom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Visibility" type="tns:RuleVisibility" />
+      <xs:element minOccurs="0" name="VoteInfos" nillable="true" type="tns:VoteInfoCollection" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="PluginRule" nillable="true" type="tns:PluginRule" />
+  <xs:simpleType name="ContentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="ORSAudio" />
+      <xs:enumeration value="ORSText" />
+      <xs:enumeration value="ORSVideo" />
+      <xs:enumeration value="ORSOther" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ContentType" nillable="true" type="tns:ContentType" />
+  <xs:simpleType name="MessageType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Alert">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Informational">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Warning">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">87</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BestPractice">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">66</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Error">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GreenLight">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">71</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SuperRule">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ORS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">79</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MessageType" nillable="true" type="tns:MessageType" />
+  <xs:complexType name="Plugin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivationProcedureName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BaseRetryDelayMinutes" type="xs:int" />
+      <xs:element minOccurs="0" name="BccEmailOnFailure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="BccEmailOnSuccess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Contract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Disabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EmailIntoCase" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EmailOnlyServiceOwner" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EvaluationProcedureName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FriendlyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IncreaseDelayEachRetry" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxRetryCount" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerEmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueueName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiveTimeoutMilliseconds" type="xs:int" />
+      <xs:element minOccurs="0" name="Rules" nillable="true" type="tns:PluginRuleCollection" />
+      <xs:element minOccurs="0" name="SendEmail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SupportsNestedFiles" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UseCcForEmailIntoCase" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VerboseMode" type="xs:boolean" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Plugin" nillable="true" type="tns:Plugin" />
+  <xs:simpleType name="RuleVisibility">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="FTE" />
+      <xs:enumeration value="Contingent" />
+      <xs:enumeration value="Partner" />
+      <xs:enumeration value="Customer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RuleVisibility" nillable="true" type="tns:RuleVisibility" />
+  <xs:complexType name="VoteInfoCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VoteInfo" nillable="true" type="tns:VoteInfo" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="VoteInfoCollection" nillable="true" type="tns:VoteInfoCollection" />
+  <xs:complexType name="VoteInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PluginName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PluginRule" nillable="true" type="tns:PluginRule" />
+      <xs:element minOccurs="0" name="SolutionSourceID" type="ser:guid" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="TimeOfVote" type="q7:DateTimeOffset" />
+      <xs:element minOccurs="0" name="UserComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VoteNegPos" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkGroup" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="VoteInfo" nillable="true" type="tns:VoteInfo" />
+  <xs:complexType name="ProductGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClusterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FriendlyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="SupportTopics" nillable="true" type="tns:SupportTopicCollection" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ProductGroup" nillable="true" type="tns:ProductGroup" />
+  <xs:complexType name="ProductGroupTable">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="innerDictionary" nillable="true" type="q8:ArrayOfKeyValueOflongProductGroupZhx2zQii" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ProductGroupTable" nillable="true" type="tns:ProductGroupTable" />
+  <xs:complexType name="GenericMessageTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InputSources" nillable="true" type="tns:InputSourceTable" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="innerDictionary" nillable="true" type="q9:ArrayOfKeyValueOfguidGenericMessage_Pv_S4ioiV" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="GenericMessageTable" nillable="true" type="tns:GenericMessageTable" />
+  <xs:complexType name="InputSourceTable">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="innerDictionary" nillable="true" type="q10:ArrayOfKeyValueOflongInputSourceZhx2zQii" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="InputSourceTable" nillable="true" type="tns:InputSourceTable" />
+  <xs:complexType name="InputSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CaseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataSourceSystem" nillable="true" type="tns:DataSourceSystem" />
+      <xs:element minOccurs="0" name="DiagnosticMessageCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrorMessageCount" type="xs:int" />
+      <xs:element minOccurs="0" name="FileGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="Files" nillable="true" type="tns:DiagnosticsFileTable" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="InformationMessageCount" type="xs:int" />
+      <xs:element minOccurs="0" name="InputType" type="tns:InputType" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="InsertedDate" type="q11:DateTimeOffset" />
+      <xs:element minOccurs="0" name="LogDirectory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxDiagnosticMessageSeverity" type="xs:int" />
+      <xs:element minOccurs="0" name="OriginalLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessingStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Purged" type="xs:boolean" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="PurgedDate" type="q12:DateTimeOffset" />
+      <xs:element minOccurs="0" name="ReplicaServers" nillable="true" type="tns:ReplicaSiteCollection" />
+      <xs:element minOccurs="0" name="Replicas" nillable="true" type="tns:InputSourceReplicaCollection" />
+      <xs:element minOccurs="0" name="Requestor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelfHelpCaseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetDatabase" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempDirectory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VisualizerLinks" nillable="true" type="tns:VisualizerLinkCollection" />
+      <xs:element minOccurs="0" name="WarningMessageCount" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="InputSource" nillable="true" type="tns:InputSource" />
+  <xs:complexType name="DataSourceSystem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsCacheSource" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SourceSystemId" type="xs:int" />
+      <xs:element minOccurs="0" name="SystemFriendlyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemName" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="DataSourceSystem" nillable="true" type="tns:DataSourceSystem" />
+  <xs:complexType name="DiagnosticsFileTable">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="innerDictionary" nillable="true" type="q13:ArrayOfKeyValueOfguidDiagnosticsFile_Pv_S4ioiV" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="DiagnosticsFileTable" nillable="true" type="tns:DiagnosticsFileTable" />
+  <xs:complexType name="DiagnosticsFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="FullFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InputSource" nillable="true" type="tns:InputSource" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ModifiedDate" type="q14:DateTimeOffset" />
+      <xs:element minOccurs="0" name="ParentFileGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="Size" type="xs:long" />
+      <xs:element minOccurs="0" name="VisualizerLinks" nillable="true" type="tns:VisualizerLinkCollection" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="DiagnosticsFile" nillable="true" type="tns:DiagnosticsFile" />
+  <xs:complexType name="VisualizerLinkCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VisualizerLink" nillable="true" type="tns:VisualizerLink" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="VisualizerLinkCollection" nillable="true" type="tns:VisualizerLinkCollection" />
+  <xs:complexType name="VisualizerLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CaseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileGUID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Guidance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VizURL" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="VisualizerLink" nillable="true" type="tns:VisualizerLink" />
+  <xs:simpleType name="InputType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="File">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Directory">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CompressedFile">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">67</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="InputType" nillable="true" type="tns:InputType" />
+  <xs:complexType name="ReplicaSiteCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReplicaSite" nillable="true" type="tns:ReplicaSite" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ReplicaSiteCollection" nillable="true" type="tns:ReplicaSiteCollection" />
+  <xs:complexType name="ReplicaSite">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsTestSite" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationFriendlyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionID" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ReplicaSite" nillable="true" type="tns:ReplicaSite" />
+  <xs:complexType name="InputSourceReplicaCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InputSourceReplica" nillable="true" type="tns:InputSourceReplica" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="InputSourceReplicaCollection" nillable="true" type="tns:InputSourceReplicaCollection" />
+  <xs:complexType name="InputSourceReplica">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CacheRequestCreatedDate" type="q15:DateTimeOffset" />
+      <xs:element minOccurs="0" name="CacheRequestID" type="ser:guid" />
+      <xs:element minOccurs="0" name="CacheStatusID" type="xs:short" />
+      <xs:element minOccurs="0" name="CacheStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeCompressRequestID" type="ser:guid" />
+      <xs:element minOccurs="0" name="DeCompressStatusID" type="xs:short" />
+      <xs:element minOccurs="0" name="DeCompressStatusName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DecompressRequestCreatedDate" type="q16:DateTimeOffset" />
+      <xs:element minOccurs="0" name="InputSourceID" type="xs:long" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="LastCacheStatusChange" type="q17:DateTimeOffset" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="LastDeCompressStatusChange" type="q18:DateTimeOffset" />
+      <xs:element minOccurs="0" name="LocationFriendlyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplicaGUID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ReplicaLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplicaServerID" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteID" type="xs:int" />
+      <xs:element minOccurs="0" name="fInputSourcePurged" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fUncompressOnCompletion" type="xs:boolean" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="InputSourceReplica" nillable="true" type="tns:InputSourceReplica" />
+  <xs:complexType name="GenericMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Component" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Context" nillable="true" type="tns:GenericMessageContextCollection" />
+      <xs:element minOccurs="0" name="File" nillable="true" type="tns:DiagnosticsFile" />
+      <xs:element minOccurs="0" name="FileType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="InputSource" nillable="true" type="tns:InputSource" />
+      <xs:element minOccurs="0" name="IsFixedIssue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGreenLightMessage" type="xs:boolean" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="MessageDateTime" type="q19:DateTimeOffset" />
+      <xs:element minOccurs="0" name="MessageSpecificData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModulePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OccurrenceCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:GenericMessageParameterTable" />
+      <xs:element minOccurs="0" name="PatternMatch" type="xs:int" />
+      <xs:element minOccurs="0" name="PluginRule" nillable="true" type="tns:PluginRule" />
+      <xs:element minOccurs="0" name="ProcessName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Server" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceElement" type="xs:int" />
+      <xs:element minOccurs="0" name="ViewedUsers" nillable="true" type="tns:ViewedUserCollection" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="GenericMessage" nillable="true" type="tns:GenericMessage" />
+  <xs:complexType name="GenericMessageContextCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="innerList" nillable="true" type="tns:ArrayOfGenericMessageContextBase" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="GenericMessageContextCollection" nillable="true" type="tns:GenericMessageContextCollection" />
+  <xs:complexType name="ArrayOfGenericMessageContextBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericMessageContextBase" nillable="true" type="tns:GenericMessageContextBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenericMessageContextBase" nillable="true" type="tns:ArrayOfGenericMessageContextBase" />
+  <xs:complexType name="GenericMessageContextBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GenericMessage" nillable="true" type="tns:GenericMessage" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parent" nillable="true" type="tns:GenericMessageParentContext" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBase" nillable="true" type="tns:GenericMessageContextBase" />
+  <xs:complexType name="GenericMessageParentContext">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfArrayOfanyTypeuHEDJ7Dj">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Children" nillable="true" type="tns:GenericMessageParentContext.GenericMessageContextChildren" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageParentContext" nillable="true" type="tns:GenericMessageParentContext" />
+  <xs:complexType name="GenericMessageContextBaseOfArrayOfanyTypeuHEDJ7Dj">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfanyType" Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Value" nillable="true" type="q20:ArrayOfanyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfArrayOfanyTypeuHEDJ7Dj" nillable="true" type="tns:GenericMessageContextBaseOfArrayOfanyTypeuHEDJ7Dj" />
+  <xs:complexType name="GenericMessageStringContext">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfstring">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageStringContext" nillable="true" type="tns:GenericMessageStringContext" />
+  <xs:complexType name="GenericMessageContextBaseOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfstring" nillable="true" type="tns:GenericMessageContextBaseOfstring" />
+  <xs:complexType name="GenericMessageContextOfunsignedByte">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfunsignedByte">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfunsignedByte" nillable="true" type="tns:GenericMessageContextOfunsignedByte" />
+  <xs:complexType name="GenericMessageContextBaseOfunsignedByte">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:unsignedByte" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfunsignedByte" nillable="true" type="tns:GenericMessageContextBaseOfunsignedByte" />
+  <xs:complexType name="GenericMessageContextOfbyte">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="byte" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfbyte">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfbyte" nillable="true" type="tns:GenericMessageContextOfbyte" />
+  <xs:complexType name="GenericMessageContextBaseOfbyte">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="byte" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:byte" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfbyte" nillable="true" type="tns:GenericMessageContextBaseOfbyte" />
+  <xs:complexType name="GenericMessageContextOfboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfboolean">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfboolean" nillable="true" type="tns:GenericMessageContextOfboolean" />
+  <xs:complexType name="GenericMessageContextBaseOfboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfboolean" nillable="true" type="tns:GenericMessageContextBaseOfboolean" />
+  <xs:complexType name="GenericMessageContextOfchar">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="char" Namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfchar">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfchar" nillable="true" type="tns:GenericMessageContextOfchar" />
+  <xs:complexType name="GenericMessageContextBaseOfchar">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="char" Namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="ser:char" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfchar" nillable="true" type="tns:GenericMessageContextBaseOfchar" />
+  <xs:complexType name="GenericMessageContextOfdateTime">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="dateTime" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfdateTime">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfdateTime" nillable="true" type="tns:GenericMessageContextOfdateTime" />
+  <xs:complexType name="GenericMessageContextBaseOfdateTime">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="dateTime" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfdateTime" nillable="true" type="tns:GenericMessageContextBaseOfdateTime" />
+  <xs:complexType name="GenericMessageContextOfDateTimeOffset5F2dSckg">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DateTimeOffset" Namespace="http://schemas.datacontract.org/2004/07/System" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfDateTimeOffset5F2dSckg">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfDateTimeOffset5F2dSckg" nillable="true" type="tns:GenericMessageContextOfDateTimeOffset5F2dSckg" />
+  <xs:complexType name="GenericMessageContextBaseOfDateTimeOffset5F2dSckg">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DateTimeOffset" Namespace="http://schemas.datacontract.org/2004/07/System" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="Value" type="q21:DateTimeOffset" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfDateTimeOffset5F2dSckg" nillable="true" type="tns:GenericMessageContextBaseOfDateTimeOffset5F2dSckg" />
+  <xs:complexType name="GenericMessageContextOfdecimal">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="decimal" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfdecimal">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfdecimal" nillable="true" type="tns:GenericMessageContextOfdecimal" />
+  <xs:complexType name="GenericMessageContextBaseOfdecimal">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="decimal" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfdecimal" nillable="true" type="tns:GenericMessageContextBaseOfdecimal" />
+  <xs:complexType name="GenericMessageContextOfshort">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="short" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfshort">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfshort" nillable="true" type="tns:GenericMessageContextOfshort" />
+  <xs:complexType name="GenericMessageContextBaseOfshort">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="short" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfshort" nillable="true" type="tns:GenericMessageContextBaseOfshort" />
+  <xs:complexType name="GenericMessageContextOfunsignedShort">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedShort" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfunsignedShort">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfunsignedShort" nillable="true" type="tns:GenericMessageContextOfunsignedShort" />
+  <xs:complexType name="GenericMessageContextBaseOfunsignedShort">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedShort" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:unsignedShort" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfunsignedShort" nillable="true" type="tns:GenericMessageContextBaseOfunsignedShort" />
+  <xs:complexType name="GenericMessageContextOfint">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfint">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfint" nillable="true" type="tns:GenericMessageContextOfint" />
+  <xs:complexType name="GenericMessageContextBaseOfint">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfint" nillable="true" type="tns:GenericMessageContextBaseOfint" />
+  <xs:complexType name="GenericMessageContextOfunsignedInt">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedInt" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfunsignedInt">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfunsignedInt" nillable="true" type="tns:GenericMessageContextOfunsignedInt" />
+  <xs:complexType name="GenericMessageContextBaseOfunsignedInt">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedInt" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:unsignedInt" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfunsignedInt" nillable="true" type="tns:GenericMessageContextBaseOfunsignedInt" />
+  <xs:complexType name="GenericMessageContextOflong">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="long" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOflong">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOflong" nillable="true" type="tns:GenericMessageContextOflong" />
+  <xs:complexType name="GenericMessageContextBaseOflong">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="long" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOflong" nillable="true" type="tns:GenericMessageContextBaseOflong" />
+  <xs:complexType name="GenericMessageContextOfunsignedLong">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedLong" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfunsignedLong">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfunsignedLong" nillable="true" type="tns:GenericMessageContextOfunsignedLong" />
+  <xs:complexType name="GenericMessageContextBaseOfunsignedLong">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedLong" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:unsignedLong" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfunsignedLong" nillable="true" type="tns:GenericMessageContextBaseOfunsignedLong" />
+  <xs:complexType name="GenericMessageContextOffloat">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="float" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOffloat">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOffloat" nillable="true" type="tns:GenericMessageContextOffloat" />
+  <xs:complexType name="GenericMessageContextBaseOffloat">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="float" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:float" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOffloat" nillable="true" type="tns:GenericMessageContextBaseOffloat" />
+  <xs:complexType name="GenericMessageContextOfdouble">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="double" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfdouble">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfdouble" nillable="true" type="tns:GenericMessageContextOfdouble" />
+  <xs:complexType name="GenericMessageContextBaseOfdouble">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="double" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfdouble" nillable="true" type="tns:GenericMessageContextBaseOfdouble" />
+  <xs:complexType name="GenericMessageContextOfguid">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="guid" Namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBaseOfguid">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextOfguid" nillable="true" type="tns:GenericMessageContextOfguid" />
+  <xs:complexType name="GenericMessageContextBaseOfguid">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageContextBaseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="guid" Namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageContextBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageContextBaseOfguid" nillable="true" type="tns:GenericMessageContextBaseOfguid" />
+  <xs:complexType name="GenericMessageParentContext.GenericMessageContextChildren">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:GenericMessageContextCollection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GenericMessageParentContext.GenericMessageContextChildren" nillable="true" type="tns:GenericMessageParentContext.GenericMessageContextChildren" />
+  <xs:complexType name="GenericMessageParameterTable">
+    <xs:sequence>
+      <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="innerDictionary" nillable="true" type="q22:ArrayOfKeyValueOfGenericMessageTemplateFieldGenericMessageParameterCollection_SHGtHlFk" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="GenericMessageParameterTable" nillable="true" type="tns:GenericMessageParameterTable" />
+  <xs:simpleType name="GenericMessageTemplateField">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Any" />
+      <xs:enumeration value="PublicContentUrl" />
+      <xs:enumeration value="InternalContentUrl" />
+      <xs:enumeration value="SolutionDescription" />
+      <xs:enumeration value="Symptom" />
+      <xs:enumeration value="RootCause" />
+      <xs:enumeration value="SolutionTitle" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GenericMessageTemplateField" nillable="true" type="tns:GenericMessageTemplateField" />
+  <xs:complexType name="GenericMessageParameterCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="innerList" nillable="true" type="tns:ArrayOfGenericMessageParameterBase" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="GenericMessageParameterCollection" nillable="true" type="tns:GenericMessageParameterCollection" />
+  <xs:complexType name="ArrayOfGenericMessageParameterBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GenericMessageParameterBase" nillable="true" type="tns:GenericMessageParameterBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGenericMessageParameterBase" nillable="true" type="tns:ArrayOfGenericMessageParameterBase" />
+  <xs:complexType name="GenericMessageParameterBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FieldName" type="tns:GenericMessageTemplateField" />
+      <xs:element minOccurs="0" name="Format" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GenericMessage" nillable="true" type="tns:GenericMessage" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="TokenName" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="GenericMessageParameterBase" nillable="true" type="tns:GenericMessageParameterBase" />
+  <xs:complexType name="GenericMessageParameterOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageParameterOfstring" nillable="true" type="tns:GenericMessageParameterOfstring" />
+  <xs:complexType name="GenericMessageParameterOfboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageParameterOfboolean" nillable="true" type="tns:GenericMessageParameterOfboolean" />
+  <xs:complexType name="FormattableGenericMessageParameterOfunsignedByte">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:unsignedByte" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfunsignedByte" nillable="true" type="tns:FormattableGenericMessageParameterOfunsignedByte" />
+  <xs:complexType name="FormattableGenericMessageParameterOfbyte">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="byte" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:byte" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfbyte" nillable="true" type="tns:FormattableGenericMessageParameterOfbyte" />
+  <xs:complexType name="FormattableGenericMessageParameterOfshort">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="short" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:short" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfshort" nillable="true" type="tns:FormattableGenericMessageParameterOfshort" />
+  <xs:complexType name="FormattableGenericMessageParameterOfunsignedShort">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedShort" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:unsignedShort" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfunsignedShort" nillable="true" type="tns:FormattableGenericMessageParameterOfunsignedShort" />
+  <xs:complexType name="GenericMessageParameterOfchar">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="GenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="char" Namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="ser:char" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericMessageParameterOfchar" nillable="true" type="tns:GenericMessageParameterOfchar" />
+  <xs:complexType name="FormattableGenericMessageParameterOfint">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfint" nillable="true" type="tns:FormattableGenericMessageParameterOfint" />
+  <xs:complexType name="FormattableGenericMessageParameterOfunsignedInt">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedInt" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:unsignedInt" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfunsignedInt" nillable="true" type="tns:FormattableGenericMessageParameterOfunsignedInt" />
+  <xs:complexType name="FormattableGenericMessageParameterOflong">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="long" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOflong" nillable="true" type="tns:FormattableGenericMessageParameterOflong" />
+  <xs:complexType name="FormattableGenericMessageParameterOfunsignedLong">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="unsignedLong" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:unsignedLong" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfunsignedLong" nillable="true" type="tns:FormattableGenericMessageParameterOfunsignedLong" />
+  <xs:complexType name="FormattableGenericMessageParameterOfdateTime">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="dateTime" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfdateTime" nillable="true" type="tns:FormattableGenericMessageParameterOfdateTime" />
+  <xs:complexType name="FormattableGenericMessageParameterOfDateTimeOffset5F2dSckg">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DateTimeOffset" Namespace="http://schemas.datacontract.org/2004/07/System" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="Value" type="q23:DateTimeOffset" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfDateTimeOffset5F2dSckg" nillable="true" type="tns:FormattableGenericMessageParameterOfDateTimeOffset5F2dSckg" />
+  <xs:complexType name="FormattableGenericMessageParameterOffloat">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="float" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:float" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOffloat" nillable="true" type="tns:FormattableGenericMessageParameterOffloat" />
+  <xs:complexType name="FormattableGenericMessageParameterOfdouble">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="double" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfdouble" nillable="true" type="tns:FormattableGenericMessageParameterOfdouble" />
+  <xs:complexType name="FormattableGenericMessageParameterOfdecimal">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="decimal" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfdecimal" nillable="true" type="tns:FormattableGenericMessageParameterOfdecimal" />
+  <xs:complexType name="FormattableGenericMessageParameterOfguid">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FormattableGenericMessageParameterOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="guid" Namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GenericMessageParameterBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormattableGenericMessageParameterOfguid" nillable="true" type="tns:FormattableGenericMessageParameterOfguid" />
+  <xs:complexType name="ViewedUserCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewedUser" nillable="true" type="tns:ViewedUser" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ViewedUserCollection" nillable="true" type="tns:ViewedUserCollection" />
+  <xs:complexType name="ViewedUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageID" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ViewedDate" type="q24:DateTimeOffset" />
+      <xs:element minOccurs="0" name="WorkGroup" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ViewedUser" nillable="true" type="tns:ViewedUser" />
+  <xs:complexType name="PluginTable">
+    <xs:sequence>
+      <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="innerDictionary" nillable="true" type="q25:ArrayOfKeyValueOfintPluginZhx2zQii" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="PluginTable" nillable="true" type="tns:PluginTable" />
+  <xs:complexType name="ArrayOfPluginRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PluginRule" nillable="true" type="tns:PluginRule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPluginRule" nillable="true" type="tns:ArrayOfPluginRule" />
+  <xs:complexType name="UserTable">
+    <xs:sequence>
+      <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="innerDictionary" nillable="true" type="q26:ArrayOfKeyValueOfstringUserZhx2zQii" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="UserTable" nillable="true" type="tns:UserTable" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnlistmentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsEnlistedInDiagnostics" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Manager" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Roles" nillable="true" type="tns:ArrayOfRole" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkGroup" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Role" type="tns:Role" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRole" nillable="true" type="tns:ArrayOfRole" />
+  <xs:simpleType name="Role">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Admin">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Public">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="CaseTable">
+    <xs:sequence>
+      <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InnerDictionary" nillable="true" type="q27:ArrayOfKeyValueOfstringCaseZhx2zQii" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="CaseTable" nillable="true" type="tns:CaseTable" />
+  <xs:complexType name="Case">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BackUpManagerAlias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CaseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClosedTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ContractTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CustomerEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerLocation" nillable="true" type="tns:Location" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiagMessageCount" type="xs:int" />
+      <xs:element minOccurs="0" name="IsSelfHelpCase" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ManagerAlias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxDiagMessageSeverity" type="xs:int" />
+      <xs:element minOccurs="0" name="ModifiedTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OfferingID" type="xs:int" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerType" type="xs:int" />
+      <xs:element minOccurs="0" name="ReopenedTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnicalLead2Alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnicalLead3Alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnicalLeadAlias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViewedMessageCount" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Case" nillable="true" type="tns:Case" />
+  <xs:complexType name="Location">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityId" type="xs:int" />
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsEuropeanUnionMember" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Region" type="tns:Region" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Location" nillable="true" type="tns:Location" />
+  <xs:simpleType name="Region">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE" />
+      <xs:enumeration value="US" />
+      <xs:enumeration value="EQ">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AP">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Region" nillable="true" type="tns:Region" />
+  <xs:complexType name="CaseCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Case" nillable="true" type="tns:Case" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="CaseCollection" nillable="true" type="tns:CaseCollection" />
+  <xs:complexType name="FeedbackTypesTable">
+    <xs:sequence>
+      <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="innerDictionary" nillable="true" type="q28:ArrayOfKeyValueOfintFeedbackTypesZhx2zQii" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="FeedbackTypesTable" nillable="true" type="tns:FeedbackTypesTable" />
+  <xs:complexType name="FeedbackTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommentRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FeedbackTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="NegativeOrPositive" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="FeedbackTypes" nillable="true" type="tns:FeedbackTypes" />
+  <xs:complexType name="VoteInfoTable">
+    <xs:sequence>
+      <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="innerDictionary" nillable="true" type="q29:ArrayOfKeyValueOfintVoteInfoZhx2zQii" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="VoteInfoTable" nillable="true" type="tns:VoteInfoTable" />
+  <xs:complexType name="SDPReportCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SDPReport" nillable="true" type="tns:SDPReport" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SDPReportCollection" nillable="true" type="tns:SDPReportCollection" />
+  <xs:complexType name="SDPReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiagnosticDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiagnosticId" type="ser:guid" />
+      <xs:element minOccurs="0" name="DiagnosticTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpireDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IncidentNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastUploadedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="QueuedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Queuer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionId" type="ser:guid" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SDPReport" nillable="true" type="tns:SDPReport" />
+  <xs:complexType name="SDPManifestCollection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SDPManifest" nillable="true" type="tns:SDPManifest" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SDPManifestCollection" nillable="true" type="tns:SDPManifestCollection" />
+  <xs:complexType name="SDPManifest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiagnosticDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiagnosticId" type="ser:guid" />
+      <xs:element minOccurs="0" name="DiagnosticTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Keywords" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PubXml" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SDPManifest" nillable="true" type="tns:SDPManifest" />
+  <xs:complexType name="SDPSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AvailableUploads" type="xs:int" />
+      <xs:element minOccurs="0" name="EmailTemplates" nillable="true" type="tns:EmailTemplateTable" />
+      <xs:element minOccurs="0" name="ExpireDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LandingPageURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfUploads" type="xs:int" />
+      <xs:element minOccurs="0" name="QueuedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SessionId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SDPSession" nillable="true" type="tns:SDPSession" />
+  <xs:complexType name="EmailTemplateTable">
+    <xs:sequence>
+      <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="innerDictionary" nillable="true" type="q30:ArrayOfKeyValueOfstringEmailTemplateZhx2zQii" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="EmailTemplateTable" nillable="true" type="tns:EmailTemplateTable" />
+  <xs:complexType name="EmailTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailType" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPrimary" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LanguageLocale" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="EmailTemplate" nillable="true" type="tns:EmailTemplate" />
+  <xs:complexType name="ArrayOfWorkflowInfoToRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkflowInfoToRecord" nillable="true" type="tns:WorkflowInfoToRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkflowInfoToRecord" nillable="true" type="tns:ArrayOfWorkflowInfoToRecord" />
+  <xs:complexType name="WorkflowInfoToRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionId" type="tns:WorkflowActionEnum" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="OperateTime" type="q31:DateTimeOffset" />
+      <xs:element minOccurs="0" name="OperateTimeForXml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="WorkflowId" type="ser:guid" />
+      <xs:element minOccurs="0" name="WorkspaceId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkflowInfoToRecord" nillable="true" type="tns:WorkflowInfoToRecord" />
+  <xs:simpleType name="WorkflowActionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Create_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start_Getlocations">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complete_Getlocations">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Create_Show">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cancel_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start_CreateWs">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complete_CreateWs">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SubscribeNotif">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CreateComplete">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mail_Sent">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start_GetWsWithID">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complete_GetWsWithID">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Edit_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Edit_Show">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start_ModifyWs">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">22</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complete_ModifyWs">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">23</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SwitchToCase">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Upload_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Upload_Show">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Upload_Msg">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Msg_OK">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">33</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Msg_Cancel">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">34</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cache_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">35</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cache_Show">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">36</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start_CacheFile">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">37</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complete_CacheFile">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">38</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Open_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">39</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="File_Open">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">40</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Close_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">41</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Windows_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">42</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Java_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">43</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cache_Msg">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">44</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cache_Msg2">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">45</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CacheFileComplete">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">46</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoAccessToFolder">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">47</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoAccessibleLocations">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">48</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Internal_Add_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">50</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Internal_Add_Show">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">51</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start_ValidateUser">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">52</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complete_ValidateUser">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">53</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FailToValidateInternalUsers">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">54</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start_AddUsers">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">55</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complete_AddUsers">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">56</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AddUsersComplete">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">57</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Internal_Remove_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">58</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start_RemoveUsers">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">59</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complete_RemoveUsers">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">60</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RemoveUsersComplete">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">61</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Customer_Add_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">62</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Customer_Add_Show">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">63</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Customer_Remove_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Reset_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start_LogUserFeedback">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">66</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complete_LogUserFeedback">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">67</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Request_Click">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Reset_Msg">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start_GetCountries">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complete_GetCountries">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">71</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Start_GetCountryCodeFromSrData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">72</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Complete_GetCountryCodeFromSrData">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkflowActionEnum" nillable="true" type="tns:WorkflowActionEnum" />
+  <xs:complexType name="ArrayOfCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true" type="tns:Country" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountry" nillable="true" type="tns:ArrayOfCountry" />
+  <xs:complexType name="Country">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="Region" type="tns:Region" />
+      <xs:element minOccurs="0" name="RegionId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Country" nillable="true" type="tns:Country" />
+  <xs:complexType name="WorkspaceBaseUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="tns:Location" />
+      <xs:element minOccurs="0" name="Role" type="tns:WorkspaceUserRole" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:WorkspaceStatus" />
+      <xs:element minOccurs="0" name="WorkspacePassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkspaceURL" nillable="true" type="xs:anyURI" />
+      <xs:element minOccurs="0" name="WorkspaceUserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="WorkspaceBaseUser" nillable="true" type="tns:WorkspaceBaseUser" />
+  <xs:simpleType name="WorkspaceUserRole">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE" />
+      <xs:enumeration value="WORKSPACEADMIN" />
+      <xs:enumeration value="CUSTOMER" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkspaceUserRole" nillable="true" type="tns:WorkspaceUserRole" />
+  <xs:complexType name="WorkspaceStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="WorkspaceStatus" nillable="true" type="tns:WorkspaceStatus" />
+  <xs:complexType name="WorkspaceCustomerUser">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkspaceBaseUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkspaceCustomerUser" nillable="true" type="tns:WorkspaceCustomerUser" />
+  <xs:complexType name="WorkspaceInternalUser">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkspaceBaseUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DomainName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DomainNameTitleCase" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserNameTitleCase" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkspaceInternalUser" nillable="true" type="tns:WorkspaceInternalUser" />
+  <xs:complexType name="ArrayOfWorkspaceBaseUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkspaceBaseUser" nillable="true" type="tns:WorkspaceBaseUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkspaceBaseUser" nillable="true" type="tns:ArrayOfWorkspaceBaseUser" />
+  <xs:complexType name="ArrayOfWorkspace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Workspace" nillable="true" type="tns:Workspace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkspace" nillable="true" type="tns:ArrayOfWorkspace" />
+  <xs:complexType name="Workspace">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CaseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:WorkspaceBaseUser" />
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CustomerUsers" nillable="true" type="tns:ArrayOfWorkspaceCustomerUser" />
+      <xs:element minOccurs="0" name="DeleteDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Files" nillable="true" type="tns:ArrayOfWorkspaceFile" />
+      <xs:element minOccurs="0" name="Folders" nillable="true" type="tns:ArrayOfWorkspaceFolder" />
+      <xs:element minOccurs="0" name="HasDetails" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="InternalUsers" nillable="true" type="tns:ArrayOfWorkspaceInternalUser" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="tns:Location" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="tns:WorkspaceBaseUser" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfferingId" type="xs:int" />
+      <xs:element minOccurs="0" name="Policies" nillable="true" type="tns:ArrayOfWorkspacePolicy" />
+      <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RequestIds" nillable="true" type="q32:ArrayOfguid" />
+      <xs:element minOccurs="0" name="RetentionMode" type="tns:WorkspaceRetentionMode" />
+      <xs:element minOccurs="0" name="RetentionPeriod" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="RootUNCPath" nillable="true" type="xs:anyURI" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:WorkspaceStatus" />
+      <xs:element minOccurs="0" name="TotalNumberOfFiles" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Workspace" nillable="true" type="tns:Workspace" />
+  <xs:complexType name="ArrayOfWorkspaceCustomerUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkspaceCustomerUser" nillable="true" type="tns:WorkspaceCustomerUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkspaceCustomerUser" nillable="true" type="tns:ArrayOfWorkspaceCustomerUser" />
+  <xs:complexType name="ArrayOfWorkspaceFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkspaceFile" nillable="true" type="tns:WorkspaceFile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkspaceFile" nillable="true" type="tns:ArrayOfWorkspaceFile" />
+  <xs:complexType name="WorkspaceFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Details" nillable="true" type="tns:ArrayOfWorkspaceFileDetails" />
+      <xs:element minOccurs="0" name="FolderId" type="xs:long" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="WorkspaceFile" nillable="true" type="tns:WorkspaceFile" />
+  <xs:complexType name="ArrayOfWorkspaceFileDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkspaceFileDetails" nillable="true" type="tns:WorkspaceFileDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkspaceFileDetails" nillable="true" type="tns:ArrayOfWorkspaceFileDetails" />
+  <xs:complexType name="WorkspaceFileDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsCopy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="tns:Location" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Path" nillable="true" type="xs:anyURI" />
+      <xs:element minOccurs="0" name="PercentageCompleted" type="xs:double" />
+      <xs:element minOccurs="0" name="Size" type="xs:long" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:WorkspaceStatus" />
+      <xs:element minOccurs="0" name="UploadedBy" nillable="true" type="tns:WorkspaceBaseUser" />
+      <xs:element minOccurs="0" name="UploadedOn" type="xs:dateTime" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="WorkspaceFileDetails" nillable="true" type="tns:WorkspaceFileDetails" />
+  <xs:complexType name="ArrayOfWorkspaceFolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkspaceFolder" nillable="true" type="tns:WorkspaceFolder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkspaceFolder" nillable="true" type="tns:ArrayOfWorkspaceFolder" />
+  <xs:complexType name="WorkspaceFolder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:WorkspaceBaseUser" />
+      <xs:element minOccurs="0" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="tns:WorkspaceBaseUser" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentFolderId" type="xs:long" />
+      <xs:element minOccurs="0" name="Path" nillable="true" type="xs:anyURI" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="WorkspaceFolder" nillable="true" type="tns:WorkspaceFolder" />
+  <xs:complexType name="ArrayOfWorkspaceInternalUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkspaceInternalUser" nillable="true" type="tns:WorkspaceInternalUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkspaceInternalUser" nillable="true" type="tns:ArrayOfWorkspaceInternalUser" />
+  <xs:complexType name="ArrayOfWorkspacePolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkspacePolicy" nillable="true" type="tns:WorkspacePolicy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkspacePolicy" nillable="true" type="tns:ArrayOfWorkspacePolicy" />
+  <xs:complexType name="WorkspacePolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="tns:WorkspacePolicyId" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="WorkspacePolicy" nillable="true" type="tns:WorkspacePolicy" />
+  <xs:simpleType name="WorkspacePolicyId">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE" />
+      <xs:enumeration value="SAFE_HARBOR" />
+      <xs:enumeration value="EU_SECURITY_PRIVACY" />
+      <xs:enumeration value="USNAT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkspacePolicyId" nillable="true" type="tns:WorkspacePolicyId" />
+  <xs:simpleType name="WorkspaceRetentionMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DEFAULT">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CUSTOM">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkspaceRetentionMode" nillable="true" type="tns:WorkspaceRetentionMode" />
+  <xs:complexType name="ArrayOfLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Location" nillable="true" type="tns:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocation" nillable="true" type="tns:ArrayOfLocation" />
+  <xs:complexType name="WorkspaceSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="ToalNumberOfWorkspaces" type="xs:int" />
+      <xs:element minOccurs="0" name="Workspaces" nillable="true" type="tns:ArrayOfWorkspace" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="WorkspaceSearchResult" nillable="true" type="tns:WorkspaceSearchResult" />
+</xs:schema>

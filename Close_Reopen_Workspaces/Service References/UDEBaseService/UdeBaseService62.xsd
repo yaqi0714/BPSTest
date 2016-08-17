@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" />
+  <xs:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://ncudetestwb03.northamerica.corp.microsoft.com/UdeBaseService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects.FICP.Diagnosis.DataService" />
+  <xs:element name="LookupCaseFactStoreInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="factStoreId" nillable="true" type="q1:guid" />
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupCaseFactStoreInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="LookupCaseFactStoreInfoResult" nillable="true" type="q2:CaseFactStoreInfoCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupportTopicChildren">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parentId" type="xs:long" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="parentType" type="q3:SupportTopicSearchDepth" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupportTopicChildrenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetSupportTopicChildrenResult" nillable="true" type="q4:SupportTopicCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupProductGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productGroupId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="productGroupName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupProductGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="LookupProductGroupResult" nillable="true" type="q5:ProductGroupTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupGenericMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inputSourceId" type="xs:long" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="minimumVisibility" nillable="true" type="q6:RuleVisibility" />
+        <xs:element minOccurs="0" name="minimumConfidence" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupGenericMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="LookupGenericMessagesResult" nillable="true" type="q7:GenericMessageTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupGenericMessagesByCaseNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="minimumVisibility" nillable="true" type="q8:RuleVisibility" />
+        <xs:element minOccurs="0" name="minimumConfidence" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupGenericMessagesByCaseNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="LookupGenericMessagesByCaseNumberResult" nillable="true" type="q9:GenericMessageTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupGenericMessagesEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inputSourceId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupGenericMessagesExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="LookupGenericMessagesExResult" nillable="true" type="q10:GenericMessageTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupPlugin">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupPluginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="LookupPluginResult" nillable="true" type="q11:PluginTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupPluginEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serviceId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="friendlyName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contract" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="minimumRuleCount" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupPluginExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="LookupPluginExResult" nillable="true" type="q12:PluginTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupPluginRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ruleId" nillable="true" type="xs:int" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="solutionSourceId" nillable="true" type="q13:guid" />
+        <xs:element minOccurs="0" name="localeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="pluginId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupPluginRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="LookupPluginRuleResult" nillable="true" type="q14:PluginRuleCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPluginRules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="solutionSourceId" nillable="true" type="q15:guid" />
+        <xs:element minOccurs="0" name="pluginName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="solutionTitle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="solutionDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reportedUser" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="symptom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rootCause" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="publicContentUrl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="internalContentUrl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="getOccurrenceInfo" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPluginRulesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="SearchPluginRulesResult" nillable="true" type="q16:PluginRuleCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertGenericMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="genericMessage" nillable="true" type="q17:GenericMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertGenericMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="InsertGenericMessageResult" nillable="true" type="q18:GenericMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertPluginRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="pluginRule" nillable="true" type="q19:PluginRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertPluginRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="InsertPluginRuleResult" nillable="true" type="q20:PluginRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePluginRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="pluginRule" nillable="true" type="q21:PluginRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePluginRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="UpdatePluginRuleResult" nillable="true" type="q22:PluginRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrInsertPluginRuleRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="pluginRules" nillable="true" type="q23:ArrayOfPluginRule" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrInsertPluginRuleRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="UpdateOrInsertPluginRuleRangeResult" nillable="true" type="q24:PluginRuleCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMonitoredUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="singleUser" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMonitoredUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetMonitoredUsersResult" nillable="true" type="q25:UserTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAndDirects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserAndDirectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetUserAndDirectsResult" nillable="true" type="q26:UserTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitorUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userNames" nillable="true" type="q27:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitorUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MonitorUsersResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnMonitorUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userNames" nillable="true" type="q28:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnMonitorUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UnMonitorUsersResult" nillable="true" type="q29:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnlistUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userNames" nillable="true" type="q30:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnlistUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EnlistUsersResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupCasesByOwner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseOwner" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupCasesByOwnerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="LookupCasesByOwnerResult" nillable="true" type="q31:CaseTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelatedCasesBySolutionSourceID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="solutionSourceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelatedCasesBySolutionSourceIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetRelatedCasesBySolutionSourceIDResult" nillable="true" type="q32:CaseCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCaseDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCaseDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetCaseDetailsResult" nillable="true" type="q33:CaseTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasLocalCachePermission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasLocalCachePermissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HasLocalCachePermissionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionsOfLocalCache">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="replicaServerID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionsOfLocalCacheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPermissionsOfLocalCacheResult" nillable="true" type="q34:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputSourcesForCase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filterOnLinks" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputSourcesForCaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetInputSourcesForCaseResult" nillable="true" type="q35:InputSourceTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputSourcesForCaseWithReplicas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputSourcesForCaseWithReplicasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetInputSourcesForCaseWithReplicasResult" nillable="true" type="q36:InputSourceTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilesForInputSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inputSourceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filterOnLinks" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilesForInputSourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetFilesForInputSourceResult" nillable="true" type="q37:DiagnosticsFileTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputSourceReplicas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inputSourceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInputSourceReplicasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetInputSourceReplicasResult" nillable="true" type="q38:InputSourceReplicaCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInputSourceReplica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inputSourceID" type="xs:long" />
+        <xs:element minOccurs="0" name="uncompressOnCompletion" type="xs:boolean" />
+        <xs:element minOccurs="0" name="replicaServerID" type="xs:int" />
+        <xs:element minOccurs="0" name="siteID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateInputSourceReplicaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateInputSourceReplicaResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFeedbackTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFeedbackTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetFeedbackTypesResult" nillable="true" type="q39:FeedbackTypesTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVoteForSolutionSource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="solutionSourceID" type="q40:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVoteForSolutionSourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetVoteForSolutionSourceResult" nillable="true" type="q41:VoteInfoTable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitVote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="messageID" type="q42:guid" />
+        <xs:element minOccurs="0" name="voteResult" type="xs:int" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reason" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubmitVoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubmitVoteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertViewStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="guidPairList" nillable="true" type="q43:ArrayOfArrayOfguid" />
+        <xs:element minOccurs="0" name="viewType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertViewStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InsertViewStatisticsResult" nillable="true" type="q44:ArrayOfArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestLocalCacheAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestLocalCacheAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RequestLocalCacheAccessResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogUserFeedback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="comments" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="errorNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogUserFeedbackResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LogUserFeedbackResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentDatabase">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentDatabaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCurrentDatabaseResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="from" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isBodyHtml" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendEmailResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuggestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="genericMessage" nillable="true" type="q45:GenericMessage" />
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuggestMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SuggestMessageResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSDPReports">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSDPReportsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetSDPReportsResult" nillable="true" type="q46:SDPReportCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSDPManifests">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSDPManifestsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetSDPManifestsResult" nillable="true" type="q47:SDPManifestCollection" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSDPSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supportEngineerEmail" nillable="true" type="xs:string" />
+        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="diagnosticIds" nillable="true" type="q48:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSDPSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="CreateSDPSessionResult" nillable="true" type="q49:SDPSession" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRawSDPSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supportEngineerEmail" nillable="true" type="xs:string" />
+        <xs:element xmlns:q50="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="diagnosticIds" nillable="true" type="q50:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRawSDPSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="CreateRawSDPSessionResult" nillable="true" type="q51:SDPSession" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="solutionSourceId" type="q52:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubscribeRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SubscribeRuleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnsubscribeRule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="solutionSourceId" type="q53:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnsubscribeRuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UnsubscribeRuleResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRuleSubscription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="employeeAlias" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRuleSubscriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetRuleSubscriptionResult" nillable="true" type="q54:ArrayOfguid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFICPWorkItemsBySupportRequestNumbers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SRNumbers" nillable="true" type="q55:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFICPWorkItemsBySupportRequestNumbersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects.FICP.Diagnosis.DataService" minOccurs="0" name="GetFICPWorkItemsBySupportRequestNumbersResult" nillable="true" type="q56:ArrayOfWorkItemDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AreSupportRequestFromSelfHelp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SRNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AreSupportRequestFromSelfHelpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AreSupportRequestFromSelfHelpResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorkflowRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="infoList" nillable="true" type="q57:ArrayOfWorkflowInfoToRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WorkflowRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WorkflowRecordResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtmRegionId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetCountriesResult" nillable="true" type="q58:ArrayOfCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestLink">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userNameTest" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passwordTest" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pathTest" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTestLinkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTestLinkResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCriticalNotification">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCriticalNotificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCriticalNotificationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentUser">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetCurrentUserResult" nillable="true" type="q59:WorkspaceBaseUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateUserList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="aliases" nillable="true" type="q60:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateUserListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="ValidateUserListResult" nillable="true" type="q61:ArrayOfWorkspaceBaseUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUsersToWorkspace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workspaceId" type="xs:long" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="usersToAdd" nillable="true" type="q62:ArrayOfWorkspaceBaseUser" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUsersToWorkspaceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="AddUsersToWorkspaceResult" type="q63:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseWorkspaceWithId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workspaceId" type="xs:long" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseWorkspaceWithIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="CloseWorkspaceWithIdResult" type="q64:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseWorkspacesForCaseNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseWorkspacesForCaseNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="CloseWorkspacesForCaseNumberResult" nillable="true" type="q65:ArrayOfWorkspace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReOpenWorkspacesForCaseNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="usersToAdd" nillable="true" type="q66:ArrayOfWorkspaceBaseUser" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReOpenWorkspacesForCaseNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReOpenWorkspacesForCaseNumberResult" nillable="true" type="q67:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReOpenWorkspaceWithId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workspaceId" type="xs:long" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="usersToAdd" nillable="true" type="q68:ArrayOfWorkspaceBaseUser" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReOpenWorkspaceWithIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="ReOpenWorkspaceWithIdResult" type="q69:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkspace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="workspaceToCreate" nillable="true" type="q70:Workspace" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkspaceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="CreateWorkspaceResult" nillable="true" type="q71:Workspace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableWorkspaceLocations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="Customer" nillable="true" type="q72:WorkspaceCustomerUser" />
+        <xs:element minOccurs="0" name="OfferingId" type="xs:int" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableWorkspaceLocationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetAvailableWorkspaceLocationsResult" nillable="true" type="q73:ArrayOfLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkspaceWithId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workspaceId" type="xs:long" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkspaceWithIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetWorkspaceWithIdResult" nillable="true" type="q74:Workspace" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkspaces">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="internalUser" nillable="true" type="q75:WorkspaceInternalUser" />
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="getDetails" type="xs:boolean" />
+        <xs:element minOccurs="0" name="numberOfWorkspaces" type="xs:int" />
+        <xs:element minOccurs="0" name="pageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkspacesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="GetWorkspacesResult" nillable="true" type="q76:WorkspaceSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyWorkspace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workspaceId" type="xs:long" />
+        <xs:element minOccurs="0" name="workspaceName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+        <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="retentionPeriod" nillable="true" type="q77:duration" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModifyWorkspaceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="ModifyWorkspaceResult" type="q78:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUsersFromWorkspace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="workspaceId" type="xs:long" />
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="usersToRemove" nillable="true" type="q79:ArrayOfWorkspaceBaseUser" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveUsersFromWorkspaceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="RemoveUsersFromWorkspaceResult" type="q80:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CacheFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileId" type="xs:long" />
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" minOccurs="0" name="destination" nillable="true" type="q81:Location" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CacheFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="CacheFileResult" type="q82:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileId" type="xs:long" />
+        <xs:element minOccurs="0" name="workspaceId" type="xs:long" />
+        <xs:element minOccurs="0" name="workspaceUserState" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="DeleteFileResult" type="q83:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryCodeFromSrData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="caseNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryCodeFromSrDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCountryCodeFromSrDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

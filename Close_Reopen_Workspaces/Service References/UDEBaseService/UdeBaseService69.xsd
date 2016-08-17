@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" />
+  <xs:import schemaLocation="http://hw-yaqli-vm03.fareast.corp.microsoft.com/UdeBaseService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfKeyValueOflongProductGroupZhx2zQii">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongProductGroupZhx2zQii">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Value" nillable="true" type="q1:ProductGroup" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongProductGroupZhx2zQii" nillable="true" type="tns:ArrayOfKeyValueOflongProductGroupZhx2zQii" />
+  <xs:complexType name="ArrayOfKeyValueOflongInputSourceZhx2zQii">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongInputSourceZhx2zQii">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Value" nillable="true" type="q2:InputSource" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongInputSourceZhx2zQii" nillable="true" type="tns:ArrayOfKeyValueOflongInputSourceZhx2zQii" />
+  <xs:complexType name="ArrayOfKeyValueOfguidDiagnosticsFile_Pv_S4ioiV">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfguidDiagnosticsFile_Pv_S4ioiV">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="ser:guid" />
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Value" nillable="true" type="q3:DiagnosticsFile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfguidDiagnosticsFile_Pv_S4ioiV" nillable="true" type="tns:ArrayOfKeyValueOfguidDiagnosticsFile_Pv_S4ioiV" />
+  <xs:complexType name="ArrayOfKeyValueOfguidGenericMessage_Pv_S4ioiV">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfguidGenericMessage_Pv_S4ioiV">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="ser:guid" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Value" nillable="true" type="q4:GenericMessage" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfguidGenericMessage_Pv_S4ioiV" nillable="true" type="tns:ArrayOfKeyValueOfguidGenericMessage_Pv_S4ioiV" />
+  <xs:complexType name="ArrayOfanyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfanyType" nillable="true" type="tns:ArrayOfanyType" />
+  <xs:complexType name="ArrayOfKeyValueOfGenericMessageTemplateFieldGenericMessageParameterCollection_SHGtHlFk">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfGenericMessageTemplateFieldGenericMessageParameterCollection_SHGtHlFk">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Key" type="q5:GenericMessageTemplateField" />
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Value" nillable="true" type="q6:GenericMessageParameterCollection" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfGenericMessageTemplateFieldGenericMessageParameterCollection_SHGtHlFk" nillable="true" type="tns:ArrayOfKeyValueOfGenericMessageTemplateFieldGenericMessageParameterCollection_SHGtHlFk" />
+  <xs:complexType name="ArrayOfKeyValueOfintPluginZhx2zQii">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintPluginZhx2zQii">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:int" />
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Value" nillable="true" type="q7:Plugin" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfintPluginZhx2zQii" nillable="true" type="tns:ArrayOfKeyValueOfintPluginZhx2zQii" />
+  <xs:complexType name="ArrayOfKeyValueOfstringUserZhx2zQii">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringUserZhx2zQii">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Value" nillable="true" type="q8:User" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringUserZhx2zQii" nillable="true" type="tns:ArrayOfKeyValueOfstringUserZhx2zQii" />
+  <xs:complexType name="ArrayOfstring">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+  <xs:complexType name="ArrayOfKeyValueOfstringCaseZhx2zQii">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringCaseZhx2zQii">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Value" nillable="true" type="q9:Case" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringCaseZhx2zQii" nillable="true" type="tns:ArrayOfKeyValueOfstringCaseZhx2zQii" />
+  <xs:complexType name="ArrayOfKeyValueOfintFeedbackTypesZhx2zQii">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintFeedbackTypesZhx2zQii">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:int" />
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Value" nillable="true" type="q10:FeedbackTypes" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfintFeedbackTypesZhx2zQii" nillable="true" type="tns:ArrayOfKeyValueOfintFeedbackTypesZhx2zQii" />
+  <xs:complexType name="ArrayOfKeyValueOfintVoteInfoZhx2zQii">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfintVoteInfoZhx2zQii">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:int" />
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Value" nillable="true" type="q11:VoteInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfintVoteInfoZhx2zQii" nillable="true" type="tns:ArrayOfKeyValueOfintVoteInfoZhx2zQii" />
+  <xs:complexType name="ArrayOfArrayOfguid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfguid" nillable="true" type="tns:ArrayOfguid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArrayOfguid" nillable="true" type="tns:ArrayOfArrayOfguid" />
+  <xs:complexType name="ArrayOfguid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="guid" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfguid" nillable="true" type="tns:ArrayOfguid" />
+  <xs:complexType name="ArrayOfKeyValueOfstringEmailTemplateZhx2zQii">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringEmailTemplateZhx2zQii">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Microsoft.Support.Cts.Ude.Base.Objects" name="Value" nillable="true" type="q12:EmailTemplate" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringEmailTemplateZhx2zQii" nillable="true" type="tns:ArrayOfKeyValueOfstringEmailTemplateZhx2zQii" />
+  <xs:complexType name="ArrayOfKeyValueOfstringstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringstring">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringstring" nillable="true" type="tns:ArrayOfKeyValueOfstringstring" />
+  <xs:complexType name="ArrayOflong">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="long" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOflong" nillable="true" type="tns:ArrayOflong" />
+</xs:schema>
